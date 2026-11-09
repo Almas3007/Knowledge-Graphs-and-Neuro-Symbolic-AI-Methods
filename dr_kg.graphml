@@ -1,0 +1,511 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d9" for="edge" attr.name="source" attr.type="string"/>
+<key id="d8" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d7" for="node" attr.name="rule" attr.type="string"/>
+<key id="d6" for="node" attr.name="grade" attr.type="long"/>
+<key id="d5" for="node" attr.name="prompts" attr.type="string"/>
+<key id="d4" for="node" attr.name="description" attr.type="string"/>
+<key id="d3" for="node" attr.name="name" attr.type="string"/>
+<key id="d2" for="node" attr.name="type" attr.type="string"/>
+<key id="d1" for="graph" attr.name="version" attr.type="string"/>
+<key id="d0" for="graph" attr.name="name" attr.type="string"/>
+<graph edgedefault="directed"><data key="d0">DR-KG</data>
+<data key="d1">1.0</data>
+<node id="MA">
+  <data key="d2">Lesion</data>
+  <data key="d3">Microaneurysms</data>
+  <data key="d4">Small saccular outpouchings of retinal capillaries; the earliest visible sign of DR.</data>
+  <data key="d5">microaneurysms|few microaneurysms|small red dots of microaneurysms</data>
+</node>
+<node id="LOC:retinal capillaries">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">retinal capillaries</data>
+</node>
+<node id="MECH:pericyte loss and capillary wall weakening">
+  <data key="d2">Mechanism</data>
+  <data key="d3">pericyte loss and capillary wall weakening</data>
+</node>
+<node id="G1">
+  <data key="d2">SeverityGrade</data>
+  <data key="d3">Mild NPDR</data>
+  <data key="d6">1</data>
+  <data key="d7">Microaneurysms only</data>
+</node>
+<node id="HE">
+  <data key="d2">Lesion</data>
+  <data key="d3">Intraretinal hemorrhages</data>
+  <data key="d4">Dot and blot hemorrhages within the retina.</data>
+  <data key="d5">retinal haemorrhages|dot and blot haemorrhages|intraretinal hemorrhages</data>
+</node>
+<node id="LOC:inner retina">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">inner retina</data>
+</node>
+<node id="MECH:capillary rupture">
+  <data key="d2">Mechanism</data>
+  <data key="d3">capillary rupture</data>
+</node>
+<node id="G2">
+  <data key="d2">SeverityGrade</data>
+  <data key="d3">Moderate NPDR</data>
+  <data key="d6">2</data>
+  <data key="d7">More than just microaneurysms but less than severe NPDR</data>
+</node>
+<node id="EX">
+  <data key="d2">Lesion</data>
+  <data key="d3">Hard exudates</data>
+  <data key="d4">Yellow lipid and protein deposits from leaking vessels.</data>
+  <data key="d5">hard exudates|yellow lipid exudates|exudates near the macula</data>
+</node>
+<node id="LOC:outer plexiform layer, often near the macula">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">outer plexiform layer, often near the macula</data>
+</node>
+<node id="MECH:breakdown of the blood-retinal barrier">
+  <data key="d2">Mechanism</data>
+  <data key="d3">breakdown of the blood-retinal barrier</data>
+</node>
+<node id="CWS">
+  <data key="d2">Lesion</data>
+  <data key="d3">Cotton-wool spots (soft exudates)</data>
+  <data key="d4">Fluffy white nerve-fibre-layer infarcts.</data>
+  <data key="d5">cotton wool spots|soft exudates|white fluffy cotton wool spots</data>
+</node>
+<node id="LOC:retinal nerve fibre layer">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">retinal nerve fibre layer</data>
+</node>
+<node id="MECH:focal capillary occlusion and axoplasmic stasis">
+  <data key="d2">Mechanism</data>
+  <data key="d3">focal capillary occlusion and axoplasmic stasis</data>
+</node>
+<node id="SHE">
+  <data key="d2">Lesion</data>
+  <data key="d3">Extensive hemorrhages in four quadrants</data>
+  <data key="d4">More than 20 intraretinal hemorrhages in each of the four quadrants (4-2-1 rule, '4').</data>
+  <data key="d5">many haemorrhages in all four quadrants|extensive retinal haemorrhages|severe intraretinal haemorrhages</data>
+</node>
+<node id="LOC:all four retinal quadrants">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">all four retinal quadrants</data>
+</node>
+<node id="MECH:widespread capillary non-perfusion">
+  <data key="d2">Mechanism</data>
+  <data key="d3">widespread capillary non-perfusion</data>
+</node>
+<node id="G3">
+  <data key="d2">SeverityGrade</data>
+  <data key="d3">Severe NPDR</data>
+  <data key="d6">3</data>
+  <data key="d7">Any of: &gt;20 intraretinal haemorrhages in each of 4 quadrants; venous beading in &gt;=2 quadrants; IRMA in &gt;=1 quadrant; and no signs of PDR</data>
+</node>
+<node id="VB">
+  <data key="d2">Lesion</data>
+  <data key="d3">Venous beading</data>
+  <data key="d4">Localised dilation and constriction of retinal veins (4-2-1 rule, '2': two or more quadrants).</data>
+  <data key="d5">venous beading|beaded retinal veins|venous abnormalities</data>
+</node>
+<node id="LOC:retinal veins">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">retinal veins</data>
+</node>
+<node id="MECH:retinal ischaemia">
+  <data key="d2">Mechanism</data>
+  <data key="d3">retinal ischaemia</data>
+</node>
+<node id="IRMA">
+  <data key="d2">Lesion</data>
+  <data key="d3">Intraretinal microvascular abnormalities</data>
+  <data key="d4">Shunt vessels within the retina (4-2-1 rule, '1': one or more quadrants).</data>
+  <data key="d5">intraretinal microvascular abnormalities|IRMA|abnormal intraretinal vessels</data>
+</node>
+<node id="LOC:intraretinal capillary bed">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">intraretinal capillary bed</data>
+</node>
+<node id="MECH:ischaemia-driven vascular remodelling">
+  <data key="d2">Mechanism</data>
+  <data key="d3">ischaemia-driven vascular remodelling</data>
+</node>
+<node id="NV">
+  <data key="d2">Lesion</data>
+  <data key="d3">Neovascularisation</data>
+  <data key="d4">New vessels on the disc (NVD) or elsewhere (NVE).</data>
+  <data key="d5">neovascularization|new vessels on the optic disc|neovascularisation elsewhere</data>
+</node>
+<node id="LOC:optic disc or retinal surface">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">optic disc or retinal surface</data>
+</node>
+<node id="MECH:VEGF-driven angiogenesis">
+  <data key="d2">Mechanism</data>
+  <data key="d3">VEGF-driven angiogenesis</data>
+</node>
+<node id="G4">
+  <data key="d2">SeverityGrade</data>
+  <data key="d3">PDR</data>
+  <data key="d6">4</data>
+  <data key="d7">Neovascularisation and/or vitreous or preretinal haemorrhage</data>
+</node>
+<node id="PRH">
+  <data key="d2">Lesion</data>
+  <data key="d3">Preretinal or vitreous hemorrhage</data>
+  <data key="d4">Bleeding in front of the retina or into the vitreous from fragile new vessels.</data>
+  <data key="d5">preretinal haemorrhage|vitreous haemorrhage|boat-shaped preretinal hemorrhage</data>
+</node>
+<node id="LOC:preretinal space or vitreous">
+  <data key="d2">AnatomicalSite</data>
+  <data key="d3">preretinal space or vitreous</data>
+</node>
+<node id="MECH:rupture of new vessels">
+  <data key="d2">Mechanism</data>
+  <data key="d3">rupture of new vessels</data>
+</node>
+<node id="G0">
+  <data key="d2">SeverityGrade</data>
+  <data key="d3">No DR</data>
+  <data key="d6">0</data>
+  <data key="d7">No abnormalities</data>
+</node>
+<node id="RULE:G0">
+  <data key="d2">ClinicalRule</data>
+  <data key="d3">No abnormalities</data>
+</node>
+<node id="FU:G0">
+  <data key="d2">Management</data>
+  <data key="d3">12 months</data>
+</node>
+<node id="RULE:G1">
+  <data key="d2">ClinicalRule</data>
+  <data key="d3">Microaneurysms only</data>
+</node>
+<node id="FU:G1">
+  <data key="d2">Management</data>
+  <data key="d3">12 months</data>
+</node>
+<node id="RULE:G2">
+  <data key="d2">ClinicalRule</data>
+  <data key="d3">More than just microaneurysms but less than severe NPDR</data>
+</node>
+<node id="FU:G2">
+  <data key="d2">Management</data>
+  <data key="d3">6-12 months</data>
+</node>
+<node id="RULE:G3">
+  <data key="d2">ClinicalRule</data>
+  <data key="d3">Any of: &gt;20 intraretinal haemorrhages in each of 4 quadrants; venous beading in &gt;=2 quadrants; IRMA in &gt;=1 quadrant; and no signs of PDR</data>
+</node>
+<node id="FU:G3">
+  <data key="d2">Management</data>
+  <data key="d3">3-4 months; consider referral</data>
+</node>
+<node id="RULE:G4">
+  <data key="d2">ClinicalRule</data>
+  <data key="d3">Neovascularisation and/or vitreous or preretinal haemorrhage</data>
+</node>
+<node id="FU:G4">
+  <data key="d2">Management</data>
+  <data key="d3">Urgent referral; panretinal photocoagulation or anti-VEGF</data>
+</node>
+<node id="NEUTRAL">
+  <data key="d2">Reference</data>
+  <data key="d3">Normal fundus</data>
+  <data key="d5">normal fundus|healthy retina|no diabetic retinopathy</data>
+</node>
+<edge source="MA" target="LOC:retinal capillaries" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="MA" target="MECH:pericyte loss and capillary wall weakening" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="MA" target="G1" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G1" target="RULE:G1" id="0">
+  <data key="d8">defined_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G1" target="FU:G1" id="0">
+  <data key="d8">recommended_followup</data>
+  <data key="d9">AAO Preferred Practice Pattern</data>
+</edge>
+<edge source="G1" target="G2" id="0">
+  <data key="d8">progresses_to</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="HE" target="LOC:inner retina" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="HE" target="MECH:capillary rupture" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="HE" target="G2" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G2" target="RULE:G2" id="0">
+  <data key="d8">defined_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G2" target="FU:G2" id="0">
+  <data key="d8">recommended_followup</data>
+  <data key="d9">AAO Preferred Practice Pattern</data>
+</edge>
+<edge source="G2" target="G3" id="0">
+  <data key="d8">progresses_to</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="EX" target="LOC:outer plexiform layer, often near the macula" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="EX" target="MECH:breakdown of the blood-retinal barrier" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="EX" target="G2" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="CWS" target="LOC:retinal nerve fibre layer" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="CWS" target="MECH:focal capillary occlusion and axoplasmic stasis" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="CWS" target="G2" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="SHE" target="LOC:all four retinal quadrants" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="SHE" target="MECH:widespread capillary non-perfusion" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="SHE" target="G3" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="G3" target="RULE:G3" id="0">
+  <data key="d8">defined_by</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="G3" target="FU:G3" id="0">
+  <data key="d8">recommended_followup</data>
+  <data key="d9">AAO Preferred Practice Pattern</data>
+</edge>
+<edge source="G3" target="G4" id="0">
+  <data key="d8">progresses_to</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="VB" target="LOC:retinal veins" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="VB" target="MECH:retinal ischaemia" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="VB" target="G3" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="IRMA" target="LOC:intraretinal capillary bed" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="IRMA" target="MECH:ischaemia-driven vascular remodelling" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="IRMA" target="G3" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="NV" target="LOC:optic disc or retinal surface" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="NV" target="MECH:VEGF-driven angiogenesis" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="NV" target="G4" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G4" target="RULE:G4" id="0">
+  <data key="d8">defined_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G4" target="FU:G4" id="0">
+  <data key="d8">recommended_followup</data>
+  <data key="d9">AAO Preferred Practice Pattern</data>
+</edge>
+<edge source="PRH" target="LOC:preretinal space or vitreous" id="0">
+  <data key="d8">located_in</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="PRH" target="MECH:rupture of new vessels" id="0">
+  <data key="d8">caused_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="PRH" target="G4" id="0">
+  <data key="d8">indicates_at_least</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G0" target="RULE:G0" id="0">
+  <data key="d8">defined_by</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="G0" target="FU:G0" id="0">
+  <data key="d8">recommended_followup</data>
+  <data key="d9">AAO Preferred Practice Pattern</data>
+</edge>
+<edge source="G0" target="G1" id="0">
+  <data key="d8">progresses_to</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="MA" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="HE" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="EX" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="CWS" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="SHE" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="VB" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="IRMA" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="NV" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G0" target="PRH" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="MA" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="HE" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="EX" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="CWS" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="SHE" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="VB" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="IRMA" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="NV" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G1" target="PRH" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="HE" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="EX" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="CWS" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="SHE" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="VB" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="IRMA" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="NV" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G2" target="PRH" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G3" target="SHE" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="RULE:G3" target="VB" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="RULE:G3" target="IRMA" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)</data>
+</edge>
+<edge source="RULE:G3" target="NV" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G3" target="PRH" id="0">
+  <data key="d8">excludes</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G4" target="NV" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+<edge source="RULE:G4" target="PRH" id="0">
+  <data key="d8">requires_any</data>
+  <data key="d9">ICDR scale (Wilkinson et al., Ophthalmology 2003)</data>
+</edge>
+</graph></graphml>

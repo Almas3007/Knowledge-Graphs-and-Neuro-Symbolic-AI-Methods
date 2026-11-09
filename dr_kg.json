@@ -1,0 +1,861 @@
+{
+  "name": "DR-KG",
+  "version": "1.0",
+  "sources": [
+    "ICDR scale (Wilkinson et al., Ophthalmology 2003)",
+    "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+  ],
+  "concepts": [
+    {
+      "id": "MA",
+      "name": "Microaneurysms",
+      "level": 1,
+      "description": "Small saccular outpouchings of retinal capillaries; the earliest visible sign of DR.",
+      "location": "retinal capillaries",
+      "mechanism": "pericyte loss and capillary wall weakening",
+      "prompts": [
+        "microaneurysms",
+        "few microaneurysms",
+        "small red dots of microaneurysms"
+      ]
+    },
+    {
+      "id": "HE",
+      "name": "Intraretinal hemorrhages",
+      "level": 2,
+      "description": "Dot and blot hemorrhages within the retina.",
+      "location": "inner retina",
+      "mechanism": "capillary rupture",
+      "prompts": [
+        "retinal haemorrhages",
+        "dot and blot haemorrhages",
+        "intraretinal hemorrhages"
+      ]
+    },
+    {
+      "id": "EX",
+      "name": "Hard exudates",
+      "level": 2,
+      "description": "Yellow lipid and protein deposits from leaking vessels.",
+      "location": "outer plexiform layer, often near the macula",
+      "mechanism": "breakdown of the blood-retinal barrier",
+      "prompts": [
+        "hard exudates",
+        "yellow lipid exudates",
+        "exudates near the macula"
+      ]
+    },
+    {
+      "id": "CWS",
+      "name": "Cotton-wool spots (soft exudates)",
+      "level": 2,
+      "description": "Fluffy white nerve-fibre-layer infarcts.",
+      "location": "retinal nerve fibre layer",
+      "mechanism": "focal capillary occlusion and axoplasmic stasis",
+      "prompts": [
+        "cotton wool spots",
+        "soft exudates",
+        "white fluffy cotton wool spots"
+      ]
+    },
+    {
+      "id": "SHE",
+      "name": "Extensive hemorrhages in four quadrants",
+      "level": 3,
+      "description": "More than 20 intraretinal hemorrhages in each of the four quadrants (4-2-1 rule, '4').",
+      "location": "all four retinal quadrants",
+      "mechanism": "widespread capillary non-perfusion",
+      "prompts": [
+        "many haemorrhages in all four quadrants",
+        "extensive retinal haemorrhages",
+        "severe intraretinal haemorrhages"
+      ]
+    },
+    {
+      "id": "VB",
+      "name": "Venous beading",
+      "level": 3,
+      "description": "Localised dilation and constriction of retinal veins (4-2-1 rule, '2': two or more quadrants).",
+      "location": "retinal veins",
+      "mechanism": "retinal ischaemia",
+      "prompts": [
+        "venous beading",
+        "beaded retinal veins",
+        "venous abnormalities"
+      ]
+    },
+    {
+      "id": "IRMA",
+      "name": "Intraretinal microvascular abnormalities",
+      "level": 3,
+      "description": "Shunt vessels within the retina (4-2-1 rule, '1': one or more quadrants).",
+      "location": "intraretinal capillary bed",
+      "mechanism": "ischaemia-driven vascular remodelling",
+      "prompts": [
+        "intraretinal microvascular abnormalities",
+        "IRMA",
+        "abnormal intraretinal vessels"
+      ]
+    },
+    {
+      "id": "NV",
+      "name": "Neovascularisation",
+      "level": 4,
+      "description": "New vessels on the disc (NVD) or elsewhere (NVE).",
+      "location": "optic disc or retinal surface",
+      "mechanism": "VEGF-driven angiogenesis",
+      "prompts": [
+        "neovascularization",
+        "new vessels on the optic disc",
+        "neovascularisation elsewhere"
+      ]
+    },
+    {
+      "id": "PRH",
+      "name": "Preretinal or vitreous hemorrhage",
+      "level": 4,
+      "description": "Bleeding in front of the retina or into the vitreous from fragile new vessels.",
+      "location": "preretinal space or vitreous",
+      "mechanism": "rupture of new vessels",
+      "prompts": [
+        "preretinal haemorrhage",
+        "vitreous haemorrhage",
+        "boat-shaped preretinal hemorrhage"
+      ]
+    }
+  ],
+  "neutral_prompts": [
+    "normal fundus",
+    "healthy retina",
+    "no diabetic retinopathy"
+  ],
+  "grades": [
+    {
+      "id": "G0",
+      "grade": 0,
+      "name": "No DR",
+      "rule": "No abnormalities",
+      "followup": "12 months"
+    },
+    {
+      "id": "G1",
+      "grade": 1,
+      "name": "Mild NPDR",
+      "rule": "Microaneurysms only",
+      "followup": "12 months"
+    },
+    {
+      "id": "G2",
+      "grade": 2,
+      "name": "Moderate NPDR",
+      "rule": "More than just microaneurysms but less than severe NPDR",
+      "followup": "6-12 months"
+    },
+    {
+      "id": "G3",
+      "grade": 3,
+      "name": "Severe NPDR",
+      "rule": "Any of: >20 intraretinal haemorrhages in each of 4 quadrants; venous beading in >=2 quadrants; IRMA in >=1 quadrant; and no signs of PDR",
+      "followup": "3-4 months; consider referral"
+    },
+    {
+      "id": "G4",
+      "grade": 4,
+      "name": "PDR",
+      "rule": "Neovascularisation and/or vitreous or preretinal haemorrhage",
+      "followup": "Urgent referral; panretinal photocoagulation or anti-VEGF"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "MA",
+      "type": "Lesion",
+      "name": "Microaneurysms",
+      "description": "Small saccular outpouchings of retinal capillaries; the earliest visible sign of DR.",
+      "prompts": "microaneurysms|few microaneurysms|small red dots of microaneurysms"
+    },
+    {
+      "id": "LOC:retinal capillaries",
+      "type": "AnatomicalSite",
+      "name": "retinal capillaries"
+    },
+    {
+      "id": "MECH:pericyte loss and capillary wall weakening",
+      "type": "Mechanism",
+      "name": "pericyte loss and capillary wall weakening"
+    },
+    {
+      "id": "G1",
+      "type": "SeverityGrade",
+      "name": "Mild NPDR",
+      "grade": 1,
+      "rule": "Microaneurysms only"
+    },
+    {
+      "id": "HE",
+      "type": "Lesion",
+      "name": "Intraretinal hemorrhages",
+      "description": "Dot and blot hemorrhages within the retina.",
+      "prompts": "retinal haemorrhages|dot and blot haemorrhages|intraretinal hemorrhages"
+    },
+    {
+      "id": "LOC:inner retina",
+      "type": "AnatomicalSite",
+      "name": "inner retina"
+    },
+    {
+      "id": "MECH:capillary rupture",
+      "type": "Mechanism",
+      "name": "capillary rupture"
+    },
+    {
+      "id": "G2",
+      "type": "SeverityGrade",
+      "name": "Moderate NPDR",
+      "grade": 2,
+      "rule": "More than just microaneurysms but less than severe NPDR"
+    },
+    {
+      "id": "EX",
+      "type": "Lesion",
+      "name": "Hard exudates",
+      "description": "Yellow lipid and protein deposits from leaking vessels.",
+      "prompts": "hard exudates|yellow lipid exudates|exudates near the macula"
+    },
+    {
+      "id": "LOC:outer plexiform layer, often near the macula",
+      "type": "AnatomicalSite",
+      "name": "outer plexiform layer, often near the macula"
+    },
+    {
+      "id": "MECH:breakdown of the blood-retinal barrier",
+      "type": "Mechanism",
+      "name": "breakdown of the blood-retinal barrier"
+    },
+    {
+      "id": "CWS",
+      "type": "Lesion",
+      "name": "Cotton-wool spots (soft exudates)",
+      "description": "Fluffy white nerve-fibre-layer infarcts.",
+      "prompts": "cotton wool spots|soft exudates|white fluffy cotton wool spots"
+    },
+    {
+      "id": "LOC:retinal nerve fibre layer",
+      "type": "AnatomicalSite",
+      "name": "retinal nerve fibre layer"
+    },
+    {
+      "id": "MECH:focal capillary occlusion and axoplasmic stasis",
+      "type": "Mechanism",
+      "name": "focal capillary occlusion and axoplasmic stasis"
+    },
+    {
+      "id": "SHE",
+      "type": "Lesion",
+      "name": "Extensive hemorrhages in four quadrants",
+      "description": "More than 20 intraretinal hemorrhages in each of the four quadrants (4-2-1 rule, '4').",
+      "prompts": "many haemorrhages in all four quadrants|extensive retinal haemorrhages|severe intraretinal haemorrhages"
+    },
+    {
+      "id": "LOC:all four retinal quadrants",
+      "type": "AnatomicalSite",
+      "name": "all four retinal quadrants"
+    },
+    {
+      "id": "MECH:widespread capillary non-perfusion",
+      "type": "Mechanism",
+      "name": "widespread capillary non-perfusion"
+    },
+    {
+      "id": "G3",
+      "type": "SeverityGrade",
+      "name": "Severe NPDR",
+      "grade": 3,
+      "rule": "Any of: >20 intraretinal haemorrhages in each of 4 quadrants; venous beading in >=2 quadrants; IRMA in >=1 quadrant; and no signs of PDR"
+    },
+    {
+      "id": "VB",
+      "type": "Lesion",
+      "name": "Venous beading",
+      "description": "Localised dilation and constriction of retinal veins (4-2-1 rule, '2': two or more quadrants).",
+      "prompts": "venous beading|beaded retinal veins|venous abnormalities"
+    },
+    {
+      "id": "LOC:retinal veins",
+      "type": "AnatomicalSite",
+      "name": "retinal veins"
+    },
+    {
+      "id": "MECH:retinal ischaemia",
+      "type": "Mechanism",
+      "name": "retinal ischaemia"
+    },
+    {
+      "id": "IRMA",
+      "type": "Lesion",
+      "name": "Intraretinal microvascular abnormalities",
+      "description": "Shunt vessels within the retina (4-2-1 rule, '1': one or more quadrants).",
+      "prompts": "intraretinal microvascular abnormalities|IRMA|abnormal intraretinal vessels"
+    },
+    {
+      "id": "LOC:intraretinal capillary bed",
+      "type": "AnatomicalSite",
+      "name": "intraretinal capillary bed"
+    },
+    {
+      "id": "MECH:ischaemia-driven vascular remodelling",
+      "type": "Mechanism",
+      "name": "ischaemia-driven vascular remodelling"
+    },
+    {
+      "id": "NV",
+      "type": "Lesion",
+      "name": "Neovascularisation",
+      "description": "New vessels on the disc (NVD) or elsewhere (NVE).",
+      "prompts": "neovascularization|new vessels on the optic disc|neovascularisation elsewhere"
+    },
+    {
+      "id": "LOC:optic disc or retinal surface",
+      "type": "AnatomicalSite",
+      "name": "optic disc or retinal surface"
+    },
+    {
+      "id": "MECH:VEGF-driven angiogenesis",
+      "type": "Mechanism",
+      "name": "VEGF-driven angiogenesis"
+    },
+    {
+      "id": "G4",
+      "type": "SeverityGrade",
+      "name": "PDR",
+      "grade": 4,
+      "rule": "Neovascularisation and/or vitreous or preretinal haemorrhage"
+    },
+    {
+      "id": "PRH",
+      "type": "Lesion",
+      "name": "Preretinal or vitreous hemorrhage",
+      "description": "Bleeding in front of the retina or into the vitreous from fragile new vessels.",
+      "prompts": "preretinal haemorrhage|vitreous haemorrhage|boat-shaped preretinal hemorrhage"
+    },
+    {
+      "id": "LOC:preretinal space or vitreous",
+      "type": "AnatomicalSite",
+      "name": "preretinal space or vitreous"
+    },
+    {
+      "id": "MECH:rupture of new vessels",
+      "type": "Mechanism",
+      "name": "rupture of new vessels"
+    },
+    {
+      "id": "G0",
+      "type": "SeverityGrade",
+      "name": "No DR",
+      "grade": 0,
+      "rule": "No abnormalities"
+    },
+    {
+      "id": "RULE:G0",
+      "type": "ClinicalRule",
+      "name": "No abnormalities"
+    },
+    {
+      "id": "FU:G0",
+      "type": "Management",
+      "name": "12 months"
+    },
+    {
+      "id": "RULE:G1",
+      "type": "ClinicalRule",
+      "name": "Microaneurysms only"
+    },
+    {
+      "id": "FU:G1",
+      "type": "Management",
+      "name": "12 months"
+    },
+    {
+      "id": "RULE:G2",
+      "type": "ClinicalRule",
+      "name": "More than just microaneurysms but less than severe NPDR"
+    },
+    {
+      "id": "FU:G2",
+      "type": "Management",
+      "name": "6-12 months"
+    },
+    {
+      "id": "RULE:G3",
+      "type": "ClinicalRule",
+      "name": "Any of: >20 intraretinal haemorrhages in each of 4 quadrants; venous beading in >=2 quadrants; IRMA in >=1 quadrant; and no signs of PDR"
+    },
+    {
+      "id": "FU:G3",
+      "type": "Management",
+      "name": "3-4 months; consider referral"
+    },
+    {
+      "id": "RULE:G4",
+      "type": "ClinicalRule",
+      "name": "Neovascularisation and/or vitreous or preretinal haemorrhage"
+    },
+    {
+      "id": "FU:G4",
+      "type": "Management",
+      "name": "Urgent referral; panretinal photocoagulation or anti-VEGF"
+    },
+    {
+      "id": "NEUTRAL",
+      "type": "Reference",
+      "name": "Normal fundus",
+      "prompts": "normal fundus|healthy retina|no diabetic retinopathy"
+    }
+  ],
+  "edges": [
+    {
+      "head": "MA",
+      "relation": "located_in",
+      "tail": "LOC:retinal capillaries",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "MA",
+      "relation": "caused_by",
+      "tail": "MECH:pericyte loss and capillary wall weakening",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "MA",
+      "relation": "indicates_at_least",
+      "tail": "G1",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G1",
+      "relation": "defined_by",
+      "tail": "RULE:G1",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G1",
+      "relation": "recommended_followup",
+      "tail": "FU:G1",
+      "source": "AAO Preferred Practice Pattern"
+    },
+    {
+      "head": "G1",
+      "relation": "progresses_to",
+      "tail": "G2",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "HE",
+      "relation": "located_in",
+      "tail": "LOC:inner retina",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "HE",
+      "relation": "caused_by",
+      "tail": "MECH:capillary rupture",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "HE",
+      "relation": "indicates_at_least",
+      "tail": "G2",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G2",
+      "relation": "defined_by",
+      "tail": "RULE:G2",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G2",
+      "relation": "recommended_followup",
+      "tail": "FU:G2",
+      "source": "AAO Preferred Practice Pattern"
+    },
+    {
+      "head": "G2",
+      "relation": "progresses_to",
+      "tail": "G3",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "EX",
+      "relation": "located_in",
+      "tail": "LOC:outer plexiform layer, often near the macula",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "EX",
+      "relation": "caused_by",
+      "tail": "MECH:breakdown of the blood-retinal barrier",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "EX",
+      "relation": "indicates_at_least",
+      "tail": "G2",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "CWS",
+      "relation": "located_in",
+      "tail": "LOC:retinal nerve fibre layer",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "CWS",
+      "relation": "caused_by",
+      "tail": "MECH:focal capillary occlusion and axoplasmic stasis",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "CWS",
+      "relation": "indicates_at_least",
+      "tail": "G2",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "SHE",
+      "relation": "located_in",
+      "tail": "LOC:all four retinal quadrants",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "SHE",
+      "relation": "caused_by",
+      "tail": "MECH:widespread capillary non-perfusion",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "SHE",
+      "relation": "indicates_at_least",
+      "tail": "G3",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "G3",
+      "relation": "defined_by",
+      "tail": "RULE:G3",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "G3",
+      "relation": "recommended_followup",
+      "tail": "FU:G3",
+      "source": "AAO Preferred Practice Pattern"
+    },
+    {
+      "head": "G3",
+      "relation": "progresses_to",
+      "tail": "G4",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "VB",
+      "relation": "located_in",
+      "tail": "LOC:retinal veins",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "VB",
+      "relation": "caused_by",
+      "tail": "MECH:retinal ischaemia",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "VB",
+      "relation": "indicates_at_least",
+      "tail": "G3",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "IRMA",
+      "relation": "located_in",
+      "tail": "LOC:intraretinal capillary bed",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "IRMA",
+      "relation": "caused_by",
+      "tail": "MECH:ischaemia-driven vascular remodelling",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "IRMA",
+      "relation": "indicates_at_least",
+      "tail": "G3",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "NV",
+      "relation": "located_in",
+      "tail": "LOC:optic disc or retinal surface",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "NV",
+      "relation": "caused_by",
+      "tail": "MECH:VEGF-driven angiogenesis",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "NV",
+      "relation": "indicates_at_least",
+      "tail": "G4",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G4",
+      "relation": "defined_by",
+      "tail": "RULE:G4",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G4",
+      "relation": "recommended_followup",
+      "tail": "FU:G4",
+      "source": "AAO Preferred Practice Pattern"
+    },
+    {
+      "head": "PRH",
+      "relation": "located_in",
+      "tail": "LOC:preretinal space or vitreous",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "PRH",
+      "relation": "caused_by",
+      "tail": "MECH:rupture of new vessels",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "PRH",
+      "relation": "indicates_at_least",
+      "tail": "G4",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G0",
+      "relation": "defined_by",
+      "tail": "RULE:G0",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "G0",
+      "relation": "recommended_followup",
+      "tail": "FU:G0",
+      "source": "AAO Preferred Practice Pattern"
+    },
+    {
+      "head": "G0",
+      "relation": "progresses_to",
+      "tail": "G1",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "MA",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "HE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "EX",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "CWS",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "SHE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "VB",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "IRMA",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "NV",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G0",
+      "relation": "excludes",
+      "tail": "PRH",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "requires_any",
+      "tail": "MA",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "HE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "EX",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "CWS",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "SHE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "VB",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "IRMA",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "NV",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G1",
+      "relation": "excludes",
+      "tail": "PRH",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "requires_any",
+      "tail": "HE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "requires_any",
+      "tail": "EX",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "requires_any",
+      "tail": "CWS",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "excludes",
+      "tail": "SHE",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "excludes",
+      "tail": "VB",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "excludes",
+      "tail": "IRMA",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "excludes",
+      "tail": "NV",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G2",
+      "relation": "excludes",
+      "tail": "PRH",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G3",
+      "relation": "requires_any",
+      "tail": "SHE",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "RULE:G3",
+      "relation": "requires_any",
+      "tail": "VB",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "RULE:G3",
+      "relation": "requires_any",
+      "tail": "IRMA",
+      "source": "ETDRS 4-2-1 rule (ETDRS Report 12, Ophthalmology 1991)"
+    },
+    {
+      "head": "RULE:G3",
+      "relation": "excludes",
+      "tail": "NV",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G3",
+      "relation": "excludes",
+      "tail": "PRH",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G4",
+      "relation": "requires_any",
+      "tail": "NV",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    },
+    {
+      "head": "RULE:G4",
+      "relation": "requires_any",
+      "tail": "PRH",
+      "source": "ICDR scale (Wilkinson et al., Ophthalmology 2003)"
+    }
+  ]
+}
