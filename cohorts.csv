@@ -1,0 +1,5 @@
+encoder,cohort,n_total,n_possible_duplicates,max_cos_to_train_median,n_used,n_train,n_val,n_test
+flair,deepdrid,1589.0,0.0,0.5031868815422058,1589.0,,,
+flair,internal,,,,,11227.0,2386.0,2377.0
+biomedclip,deepdrid,1589.0,343.0,0.9718025922775269,1246.0,,,
+biomedclip,internal,,,,,11227.0,2386.0,2377.0
